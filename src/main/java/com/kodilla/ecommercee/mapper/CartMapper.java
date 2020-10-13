@@ -18,8 +18,8 @@ public class CartMapper {
     public CartDto mapToCartDto(final Cart cart) {
         return new CartDto(
                 cart.getCartId(),
-               userMapper.mapUserToUserDto(cart.getUser()),
-               productMapper.mapToTaskDtoList(cart.getProducts())
+                userMapper.mapUserToUserDto(cart.getUser()),
+                productMapper.mapToTaskDtoList(cart.getProducts())
         );
     }
 

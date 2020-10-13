@@ -20,16 +20,17 @@ public class UserMapper {
                 userDto.getUsername(),
                 userDto.getPassword(),
                 cartMapper.mapToCart(userDto.getCartDto()),
-                orderMapper.orderDtoListToOrder(userDto.getOrdersDto())
+                orderMapper.mapToOrderList(userDto.getOrdersDto())
         );
     }
+
     public UserDto mapUserToUserDto(User user) {
         return new UserDto(
                 user.getUserId(),
                 user.getUsername(),
                 user.getPassword(),
                 cartMapper.mapToCartDto(user.getCart()),
-                orderMapper.orderListToOrderTo(user.getOrders())
+                orderMapper.mapToOrderDtoList(user.getOrders())
         );
     }
 }
